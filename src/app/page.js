@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+
 export default async function Home() {
 
   const res = await fetch('https://fakestoreapi.com/products');
@@ -11,10 +12,16 @@ export default async function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         {products.map((product) => (
-          <div className={styles.productCard}>
-            <div key={product.id}>
+          <div key={product.id} className={styles.productCard}>
+            <div>
               <h1>{product.title}</h1>
-              <img src={product.image} alt={product.title} />
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={300}
+                height={300}
+              />
+              
             </div>
           </div>
         ))}
