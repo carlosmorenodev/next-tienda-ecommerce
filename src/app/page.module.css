@@ -1,141 +1,110 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
 .main {
+  width: 70%;
+  margin: auto;
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap:20px;
+}
+
+/* ====================================================================== */
+/* 1. ESTILO PRINCIPAL DE LA TARJETA (.productCard) */
+/* ====================================================================== */
+
+/* El Link se comporta como un bloque, permitiendo aplicar el diseño */
+.productCard {
+  /* Layout y Dimensiones */
+  display: flex; /* Usamos Flexbox para organizar el contenido verticalmente */
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  align-items: center; /* Centrar elementos horizontalmente */
+  text-align: center;
+  max-width: 350px; /* Ancho máximo para un diseño responsivo */
+  padding: 1.5rem;
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+  text-decoration: none; /* Quitar el subrayado del Link */
+  color: #1a1a1a; /* Color de texto oscuro por defecto */
+
+  /* Fondo y Borde */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 12px; /* Esquinas ligeramente redondeadas */
+
+  /* Sombra (Estilo moderno y suave) */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave para un efecto 3D sutil */
+
+  /* Transición para efectos hover (suavidad) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+/* Efecto Hover: Resaltar la tarjeta al pasar el ratón */
+.productCard:hover {
+  transform: translateY(-5px); /* Subir la tarjeta ligeramente */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
+/* ====================================================================== */
+/* 2. ESTILO DE LAS ETIQUETAS (.productCardLabels) */
+/* ====================================================================== */
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
+.productCardLabels {
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  margin-bottom: 0.8rem;
 }
 
-.ctas a {
+.productCardLabels ul {
   display: flex;
+  flex-wrap: wrap; /* Permite que las etiquetas salten de línea si hay muchas */
   justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  list-style: none; /* Quitar viñetas de la lista */
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem; /* Espacio entre las etiquetas */
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.productCardLabels li {
+  /* Estilo de "Chip" o "Badge" moderno */
+  background-color: #e0f7fa; /* Fondo azul claro suave */
+  color: #00796b; /* Texto azul/verde oscuro */
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px; /* Bordes muy redondeados para el estilo chip */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+/* ====================================================================== */
+/* 3. ESTILO DE OTROS ELEMENTOS */
+/* ====================================================================== */
+
+.productCardTitle {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0.8rem 0;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+/* Estilo para la imagen, si usas Next.js Image Component */
+/* Asegúrate de que el contenedor de la imagen tenga un border-radius si lo quieres */
+.productCard > img {
+  border-radius: 8px; /* Pequeñas esquinas redondeadas en la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.productCardPrice {
+  font-size: 1.8rem;
+  font-weight: 800; /* Extra-bold para destacar el precio */
+  color: #e91e63; /* Color de acento llamativo (ej. rosa fuerte) */
+  margin: 0.8rem 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.productCardDescription {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-top: 0;
+  /* Limitar la descripción para mantener la uniformidad de la tarjeta */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita la descripción a 2 líneas */
+  -webkit-box-orient: vertical;
 }

@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <header>
+          <h1 className="logo">Tienda Ecommerce</h1>
+        </header>
         {children}
       </body>
     </html>
