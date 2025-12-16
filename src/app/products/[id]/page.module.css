@@ -1,0 +1,110 @@
+/* page.module.css */
+
+.productPageContainer {
+    /* Estilo para el <div> principal si lo envuelves */
+    max-width: 1200px;
+    margin: 40px auto; /* Centrar y añadir espacio superior/inferior */
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding-top: 90px;
+}
+
+/* Layout principal usando Grid o Flexbox para la imagen y detalles */
+.productDetails {
+    display: grid;
+    /* Dos columnas: una para la imagen y otra para los detalles */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 40px;
+    align-items: flex-start; /* Alinear el contenido en la parte superior */
+    padding-top: 20px;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .productDetails {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+    .productPageContainer {
+        margin: 20px;
+    }
+}
+
+
+.productPageTitle {
+    font-size: 2.5em; /* Tamaño grande para el nombre */
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.productPageDescription {
+    line-height: 1.6; /* Mejorar legibilidad */
+    color: #555;
+    margin-top: 20px;
+}
+
+.productPageImage {
+    width: 100%; /* Ocupar todo el espacio de su columna */
+    height: auto;
+    object-fit: contain; /* Asegura que la imagen completa se vea sin recortar */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.productPagePrice {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #0070f3; /* Color primario para destacar el precio */
+    margin: 20px 0;
+}
+
+.productPageLabelsContainer {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las etiquetas salten de línea */
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.productPageLabel {
+    padding: 5px 10px;
+    background-color: #e0f7fa; /* Fondo suave */
+    color: #00bcd4; /* Color de texto que contraste */
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Botón de Comprar */
+.productPageBuyButton {
+    background-color: #ff6f61; /* Un color llamativo para la acción principal */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px; /* Separación del enlace de Volver */
+}
+
+.productPageBuyButton:hover {
+    background-color: #e65c50; /* Oscurecer al pasar el ratón */
+}
+
+/* Enlace de Volver (Link) */
+.backLink {
+    color: #555;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 12px 0; /* Para alinear verticalmente con el botón */
+}
+
+.backLink:hover {
+    text-decoration: underline;
+    color: #333;
+}

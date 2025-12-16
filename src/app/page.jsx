@@ -32,7 +32,7 @@ export default function Home() {
               width={300}
               height={300}
             />
-            <p className={styles.productCardPrice}>{product.precio}</p>
+            <p className={styles.productCardPrice}>{product.precio} €</p>
             <p className={styles.productCardDescription}>{product.descripcion}</p>
 
           </Link>
