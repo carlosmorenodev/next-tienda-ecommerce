@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header>
           <h1 className="logo">Tienda Ecommerce</h1>
+          <a href="https://carlosmorenodev.github.io/carlosmorenodev/" target="_blank">Portfolio Carlos Moreno</a>
         </header>
         {children}
       </body>

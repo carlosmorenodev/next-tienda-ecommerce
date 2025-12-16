@@ -4,6 +4,72 @@
   box-sizing: border-box;
 }
 
-header {
+/* header {
   padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  font-size: large;
+  color: black;
+} */
+
+/* ====================================================================== */
+/* ESTILO DEL CONTENEDOR PRINCIPAL: <header> */
+/* ====================================================================== */
+
+header {
+  /* Layout: Usamos Flexbox para organizar los elementos */
+  display: flex;
+  justify-content: space-between; /* Empuja el logo a la izquierda y el enlace a la derecha */
+  align-items: center; /* Centra verticalmente el contenido */
+
+  /* Dimensiones y Espaciado */
+  width: 100%;
+  padding: 1.2rem 2.5rem; /* Padding superior/inferior y lateral */
+  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+
+  /* Fondo */
+  background-color: #1a1a1a; /* Fondo oscuro (negro o gris oscuro) */
+  color: #ffffff; /* Texto blanco por defecto */
+
+  /* Sombra para darle un efecto de elevación (stickiness) */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================================================================== */
+/* ESTILO DEL LOGO (h1.logo) */
+/* ====================================================================== */
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0; /* Elimina márgenes por defecto del h1 */
+  letter-spacing: 0.5px; /* Espaciado sutil para un aspecto moderno */
+  color: #e91e63; /* Color de acento llamativo (ej. rosa fuerte) */
+}
+
+/* ====================================================================== */
+/* ESTILO DEL ENLACE (a) */
+/* ====================================================================== */
+
+header a {
+  /* Apariencia del texto */
+  color: #cccccc; /* Color gris claro para el texto */
+  text-decoration: none; /* Quitar el subrayado por defecto */
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+
+  /* Transición para el efecto hover */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto Hover: Resaltar el enlace al pasar el ratón */
+header a:hover {
+  color: #ffffff; /* Texto blanco puro */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo muy sutil al pasar el ratón */
 }
