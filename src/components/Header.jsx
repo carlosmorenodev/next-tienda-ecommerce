@@ -40,7 +40,6 @@ export default function Header() {
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
         
-
         <Link 
           href="/cart" 
           style={{ 
