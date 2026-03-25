@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "../context/CartContext";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,12 +22,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header>
-          <h1 className="logo">Tienda Ecommerce</h1>
-          <a href="https://carlosmorenodev.github.io/carlosmorenodev/" target="_blank">Portfolio Carlos Moreno</a>
-        </header>
-        {children}
+      <body 
+        className={`${geistSans.variable} ${geistMono.variable}`} 
+        style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+      >
+        <CartProvider>
+          <Header />
+          <div style={{ flex: '1 0 auto' }}>
+            {children}
+          </div>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
